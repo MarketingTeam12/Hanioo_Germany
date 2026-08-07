@@ -12,17 +12,21 @@ import {
   Linkedin,
   Link2,
   Mail,
-  MessageCircle,
   Phone,
   ShieldCheck,
   Users,
   Video,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 // Small badge icon used above each footer column heading.
-function HeadingBadge({ children }) {
-  return <span className="hn-footer-heading-badge">{children}</span>;
+function HeadingBadge({ children, color }) {
+  return (
+    <span className="hn-footer-heading-badge" style={color ? { background: color } : undefined}>
+      {children}
+    </span>
+  );
 }
 
 // Small colored icon badge used next to each "Our Services" row —
@@ -126,7 +130,7 @@ const SOCIALS = [
     bg: "linear-gradient(45deg, #F09433, #E6683C, #DC2743, #CC2366, #BC1888)",
   },
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/hanioo", bg: "#0A66C2" },
-  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/94112345678", bg: "#25D366" },
+  { icon: WhatsAppIcon, label: "WhatsApp", href: "https://wa.me/94112345678", bg: "#25D366" },
 ];
 
 // Quick Links column — paths line up with the routes in App.jsx.
@@ -191,7 +195,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <div className="font-semibold text-sm mb-4 flex items-center" style={{ color: "var(--ivory)" }}>
-              <HeadingBadge><Link2 size={15} /></HeadingBadge>
+              <HeadingBadge color="linear-gradient(140deg, #3B82F6, #1D4ED8 130%)"><Link2 size={15} /></HeadingBadge>
               {f.quickLinksHeading}
             </div>
             <ul className="space-y-2.5 text-sm">
@@ -211,7 +215,7 @@ export default function Footer() {
           {/* Our Services */}
           <div>
             <div className="font-semibold text-sm mb-4 flex items-center" style={{ color: "var(--ivory)" }}>
-              <HeadingBadge><Headphones size={15} /></HeadingBadge>
+              <HeadingBadge color="linear-gradient(140deg, #8B5CF6, #6D28D9 130%)"><Headphones size={15} /></HeadingBadge>
               {f.servicesHeading}
             </div>
             <ul className="space-y-2.5 text-sm">
@@ -231,29 +235,29 @@ export default function Footer() {
           {/* Get In Touch */}
           <div>
             <div className="font-semibold text-sm mb-4 flex items-center" style={{ color: "var(--ivory)" }}>
-              <HeadingBadge><Phone size={14} /></HeadingBadge>
+              <HeadingBadge color="linear-gradient(140deg, #10B981, #047857 130%)"><Phone size={14} /></HeadingBadge>
               {f.getInTouchHeading}
             </div>
             <ul className="space-y-3 text-sm mb-5">
               <li className="flex items-center gap-2.5">
-                <Globe2 size={15} className="flex-shrink-0" style={{ color: "#93C5FD" }} />
+                <Globe2 size={15} className="flex-shrink-0" style={{ color: "#38BDF8" }} />
                 <span style={{ color: "rgba(255,249,238,0.8)" }}>{f.availability}</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone size={15} className="flex-shrink-0" style={{ color: "#93C5FD" }} />
+                <Phone size={15} className="flex-shrink-0" style={{ color: "#34D399" }} />
                 <a href={CONTACT_PHONE_HREF} className="hn-footer-link">{f.contactPhone}</a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail size={15} className="flex-shrink-0" style={{ color: "#93C5FD" }} />
+                <Mail size={15} className="flex-shrink-0" style={{ color: "#FBBF24" }} />
                 <a href={CONTACT_EMAIL_HREF} className="hn-footer-link">{f.contactEmail}</a>
               </li>
             </ul>
 
             <div className="hn-footer-enrolled">
               <div className="hn-footer-avatar-stack">
-                <span className="hn-footer-avatar"><Users size={13} /></span>
-                <span className="hn-footer-avatar"><ShieldCheck size={13} /></span>
-                <span className="hn-footer-avatar"><Headphones size={13} /></span>
+                <span className="hn-footer-avatar" style={{ background: "linear-gradient(140deg, #3B82F6, #1D4ED8 130%)" }}><Users size={13} /></span>
+                <span className="hn-footer-avatar" style={{ background: "linear-gradient(140deg, #10B981, #047857 130%)" }}><ShieldCheck size={13} /></span>
+                <span className="hn-footer-avatar" style={{ background: "linear-gradient(140deg, #8B5CF6, #6D28D9 130%)" }}><Headphones size={13} /></span>
               </div>
               <div className="text-sm">
                 <strong style={{ color: "var(--ivory)" }}>{f.enrolledStat}</strong>{" "}

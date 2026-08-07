@@ -27,7 +27,7 @@ export default function CTA({ data }) {
             <div className="flex flex-wrap gap-4 justify-center">
               <button
                 className="px-6 py-3 rounded-full font-semibold flex items-center gap-2"
-                style={{ background: "var(--gold)", color: "var(--ink)" }}
+                style={{ background: "var(--gold)", color: "#FFFFFF" }}
                 onClick={openPopup}
               >
                 {cta.bookBtn} <ArrowRight size={18} />

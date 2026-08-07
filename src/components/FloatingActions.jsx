@@ -1,6 +1,7 @@
 import React from "react";
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 // Update these two once — every button below reads from them.
 const WHATSAPP_NUMBER = "94112345678"; // digits only, country code first, no + or spaces
@@ -21,7 +22,7 @@ export default function FloatingActions() {
         aria-label={fa.whatsapp}
         title={fa.whatsapp}
       >
-        <MessageCircle size={22} />
+        <WhatsAppIcon size={22} />
       </a>
 
       <a

@@ -45,6 +45,7 @@ export default function Languages({ data: dataProp }) {
             <button type="button" className="hn-lang-pill">
               <span className="hn-lang-pill-flag" aria-hidden="true">{item.flag}</span>
               <span className="hn-lang-pill-name">{lang === "de" ? item.de : item.en}</span>
+              <span className="hn-lang-pill-hover-flag" aria-hidden="true">{item.flag}</span>
             </button>
           </Reveal>
         ))}

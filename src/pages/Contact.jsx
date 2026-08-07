@@ -149,6 +149,20 @@ export default function Contact() {
           </div>
         </Reveal>
       </section>
+
+      <section className="max-w-5xl mx-auto px-6 pb-20">
+        <Reveal>
+          <div className="hn-contact-map">
+            <iframe
+              title="Hanioo location on map"
+              src="https://maps.google.com/maps?q=Berlin%2C%20Deutschland&t=&z=12&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+        </Reveal>
+      </section>
     </>
   );
 }

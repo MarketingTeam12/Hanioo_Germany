@@ -421,6 +421,20 @@
   transform: scale(1.08) rotate(-4deg);
 }
 
+.hn-contact-map {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 50px -22px rgba(15, 27, 45, 0.28);
+}
+.hn-contact-map iframe {
+  display: block;
+  width: 100%;
+  height: 340px;
+  border: 0;
+  filter: saturate(0.9);
+}
+
 /* ---------------------------------------------------------------------
    How It Works — step cards with checklist pills
    --------------------------------------------------------------------- */
@@ -467,6 +481,8 @@
 
 /* Language pills grid */
 .hn-lang-pill {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   display: flex;
   align-items: center;
@@ -481,9 +497,9 @@
 }
 .hn-lang-pill:hover {
   transform: translateY(-2px);
-  border-color: var(--maroon);
-  background: rgba(15, 61, 145, 0.04);
-  box-shadow: 0 14px 30px -16px rgba(15, 61, 145, 0.35);
+  border-color: transparent;
+  background: linear-gradient(90deg, var(--maroon), var(--gold) 75%, var(--saffron) 150%);
+  box-shadow: 0 14px 30px -14px rgba(15, 61, 145, 0.5);
 }
 .hn-lang-pill-flag {
   width: 34px; height: 34px;
@@ -492,7 +508,13 @@
   display: flex; align-items: center; justify-content: center;
   font-size: 1.15rem;
   overflow: hidden;
-  background: rgba(15, 27, 45, 0.04);
+  background: var(--panel);
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.hn-lang-pill:hover .hn-lang-pill-flag {
+  opacity: 0;
+  transform: scale(0.6);
 }
 .hn-lang-pill-globe {
   color: var(--maroon);
@@ -502,6 +524,35 @@
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--maroon-deep);
+  transition: color 0.3s var(--ease);
+  position: relative;
+  z-index: 1;
+}
+.hn-lang-pill:hover .hn-lang-pill-name {
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(7, 30, 66, 0.35);
+}
+.hn-lang-pill-hover-flag {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12);
+  opacity: 0;
+  transform: translateY(-50%) translateX(18px) scale(0.7);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+  pointer-events: none;
+}
+.hn-lang-pill:hover .hn-lang-pill-hover-flag {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0) scale(1);
 }
 
 /* Vertical alternating timeline for How It Works */
@@ -564,9 +615,9 @@
     grid-template-columns: 1fr 56px 1fr;
   }
   .hn-timeline-node { grid-column: 2; justify-self: center; }
-  .hn-timeline-row-left .hn-timeline-card { grid-column: 1; grid-row: 1; text-align: right; }
-  .hn-timeline-row-left .hn-timeline-card ul { justify-content: flex-end; }
-  .hn-timeline-row-left .hn-timeline-card .flex.items-center.gap-3 { justify-content: flex-end; }
+  .hn-timeline-row-left .hn-timeline-card { grid-column: 1; grid-row: 1; text-align: left; }
+  .hn-timeline-row-left .hn-timeline-card ul { justify-content: flex-start; }
+  .hn-timeline-row-left .hn-timeline-card .flex.items-center.gap-3 { justify-content: flex-start; }
   .hn-timeline-row-right .hn-timeline-card { grid-column: 3; grid-row: 1; }
 }
 
@@ -695,6 +746,7 @@
 
 .hn-service-detail-img {
   aspect-ratio: 4 / 3;
+  cursor: pointer;
   box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 .hn-service-detail-img img {
@@ -702,6 +754,10 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s var(--ease);
+}
+.hn-service-detail-img:hover img {
+  transform: scale(1.06);
 }
 
 .hn-glow {
@@ -851,7 +907,8 @@
 }
 .hn-field input::placeholder,
 .hn-field textarea::placeholder {
-  color: rgba(155, 170, 201, 0.6);
+  color: #000000;
+  opacity: 0.55;
 }
 .hn-field input:focus,
 .hn-field textarea:focus {
@@ -1174,6 +1231,16 @@
     radial-gradient(60% 90% at 8% 0%, rgba(var(--gold-rgb), 0.14), transparent 60%),
     radial-gradient(55% 80% at 95% 100%, rgba(var(--forest-rgb), 0.22), transparent 60%),
     linear-gradient(160deg, #071E42 0%, #030510 130%);
+}
+.hn-footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3B82F6, #8B5CF6, #10B981, #F59E0B, #F43F5E);
+  opacity: 0.85;
 }
 .hn-footer-wave {
   position: absolute;
