@@ -346,6 +346,8 @@ export const TRANSLATIONS = {
       namePh: "Your full name",
       contact: "Contact",
       contactPh: "Phone number",
+      city: "City",
+      cityPh: "Your city",
       email: "Email ID",
       emailPh: "you@example.com",
       message: "Tell us your message",
@@ -358,6 +360,7 @@ export const TRANSLATIONS = {
       errors: {
         name: "Please enter your name.",
         contact: "Please enter a valid contact number.",
+        city: "Please enter your city.",
         email: "Please enter a valid email address.",
         message: "Please tell us your message.",
       },
@@ -799,6 +802,8 @@ export const TRANSLATIONS = {
       namePh: "Dein vollständiger Name",
       contact: "Kontakt",
       contactPh: "Telefonnummer",
+      city: "Stadt",
+      cityPh: "Deine Stadt",
       email: "E-Mail-Adresse",
       emailPh: "du@beispiel.de",
       message: "Schreib uns deine Nachricht",
@@ -811,6 +816,7 @@ export const TRANSLATIONS = {
       errors: {
         name: "Bitte gib deinen Namen an.",
         contact: "Bitte gib eine gültige Telefonnummer an.",
+        city: "Bitte gib deine Stadt an.",
         email: "Bitte gib eine gültige E-Mail-Adresse an.",
         message: "Bitte schreib deine Nachricht.",
       },

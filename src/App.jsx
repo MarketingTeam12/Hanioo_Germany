@@ -16,6 +16,9 @@ import Service from "./pages/Service";
 import ServiceDetail from "./pages/ServiceDetail";
 import HowItWorksPage from "./pages/HowItWorksPage";
 import Contact from "./pages/Contact";
+import ThankYou from "./pages/ThankYou";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 // Jumps the viewport back to the top whenever the route changes, so
 // navigating between pages behaves like a proper multi-page site.
@@ -40,6 +43,9 @@ function AnimatedRoutes() {
         <Route path="/service/:slug" element={<ServiceDetail />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
       </Routes>
     </div>
   );

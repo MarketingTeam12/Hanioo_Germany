@@ -39,7 +39,10 @@ export default function Hero() {
           <div className="hn-hero-dark-eyebrow mb-4">{t.hero.eyebrow}</div>
           <h1 className="hn-display text-4xl md:text-5xl font-bold leading-tight mb-6" style={{ color: "#FFFFFF" }}>
             {t.hero.sayWord}{" "}
-            <span className="hn-greeting-wrap inline-block align-bottom" style={{ minWidth: "3.4ch" }}>
+            <span
+              className="hn-greeting-wrap inline-block align-bottom"
+              style={{ width: `${GREETINGS[greetIndex].word.length + 0.6}ch`, transition: "width 0.4s var(--ease)" }}
+            >
               <span key={greetIndex} className="hn-greeting" style={{ color: "#93C5FD" }}>
                 {GREETINGS[greetIndex].word}
               </span>

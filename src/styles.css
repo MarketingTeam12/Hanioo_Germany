@@ -837,13 +837,13 @@
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--line);
-  border-radius: 26px;
+  border-radius: 22px;
   max-width: 460px;
   width: 100%;
-  padding: 32px;
+  padding: 20px 28px;
   position: relative;
   box-shadow: 0 50px 90px -24px rgba(0, 0, 0, 0.7), var(--accent-glow);
-  max-height: 90vh;
+  max-height: 92vh;
   overflow-y: auto;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
@@ -884,22 +884,22 @@
   color: var(--text);
 }
 .hn-field {
-  margin-bottom: 16px;
+  margin-bottom: 9px;
 }
 .hn-field label {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
   color: var(--text);
 }
 .hn-field input,
 .hn-field textarea {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1.5px solid var(--line);
-  padding: 10px 12px;
-  font-size: 0.92rem;
+  padding: 7px 12px;
+  font-size: 0.88rem;
   font-family: inherit;
   color: var(--text);
   background: rgba(15, 27, 45, 0.025);
@@ -1061,7 +1061,7 @@
 }
 
 .hn-float-call {
-  background: linear-gradient(135deg, var(--forest), var(--forest-deep));
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
 }
 
 .hn-float-chat {

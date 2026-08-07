@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X, ChevronDown, Check, Phone, Mail, Clock } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { usePopup } from "../context/PopupContext";
 
 const FLAGS = {
   en: "https://flagcdn.com/w40/gb.png",
@@ -39,6 +40,7 @@ export default function Navbar() {
   const desktopLangRef = useRef(null);
   const mobileLangRef = useRef(null);
   const { lang, setLang, t } = useLanguage();
+  const { openPopup } = usePopup();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -137,7 +139,7 @@ export default function Navbar() {
 
         <nav className="hidden xl:flex items-center gap-5 2xl:gap-7 mx-auto">
           {navItems.map((item) => (
-            <NavLink key={item.to} to={item.to} end={item.to === "/"} className={linkClass}>
+            <NavLink key={item.to} to={item.to} end={item.to === "/"} className={linkClass} onClick={openPopup}>
               {item.label}
             </NavLink>
           ))}
@@ -161,7 +163,10 @@ export default function Navbar() {
               to={item.to}
               end={item.to === "/"}
               className={({ isActive }) => `hn-link text-left ${i === 0 ? "pt-4" : ""} ${isActive ? "active" : ""}`}
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setMenuOpen(false);
+                openPopup();
+              }}
             >
               {item.label}
             </NavLink>

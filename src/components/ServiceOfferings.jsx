@@ -4,10 +4,12 @@ import { ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 import { SERVICE_ICONS } from "../data/content";
 import { useLanguage } from "../context/LanguageContext";
+import { usePopup } from "../context/PopupContext";
 
 export default function ServiceOfferings() {
   const { t } = useLanguage();
   const offerings = t.pages.service.offerings;
+  const { openPopup } = usePopup();
 
   return (
     <section className="max-w-6xl mx-auto px-6 py-24">
@@ -39,6 +41,7 @@ export default function ServiceOfferings() {
                   <Link
                     to={`/service/${item.slug}`}
                     className="hn-service-card-link inline-flex items-center gap-1 text-sm font-semibold mt-auto self-start"
+                    onClick={openPopup}
                   >
                     {offerings.learnMore} <ArrowRight size={14} />
                   </Link>

@@ -273,9 +273,9 @@ export default function Footer() {
         >
           <span>© {new Date().getFullYear()} {f.copyright} | {f.legalNote}</span>
           <div className="flex items-center gap-4">
-            <Link to="/contact" className="hn-footer-link text-xs">{f.privacyLink}</Link>
+            <Link to="/privacy-policy" className="hn-footer-link text-xs">{f.privacyLink}</Link>
             <span className="hn-footer-dot" />
-            <Link to="/contact" className="hn-footer-link text-xs">{f.termsLink}</Link>
+            <Link to="/terms-of-service" className="hn-footer-link text-xs">{f.termsLink}</Link>
             <button
               type="button"
               onClick={scrollToTop}
