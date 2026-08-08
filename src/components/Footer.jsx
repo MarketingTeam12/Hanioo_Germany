@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowUp,
@@ -103,24 +103,6 @@ function FooterNavLink({ to, href, children, icon }) {
   );
 }
 
-// Tawk.to live chat widget
-function useTawkTo() {
-  useEffect(() => {
-    if (document.getElementById("tawkto-script")) return; // avoid loading twice
-
-    window.Tawk_API = window.Tawk_API || {};
-    window.Tawk_LoadStart = new Date();
-
-    const s1 = document.createElement("script");
-    const s0 = document.getElementsByTagName("script")[0];
-    s1.id = "tawkto-script";
-    s1.async = true;
-    s1.src = "https://embed.tawk.to/6a4f4457037b921d3d919968/1jt2q5thm";
-    s1.charset = "UTF-8";
-    s1.setAttribute("crossorigin", "*");
-    s0.parentNode.insertBefore(s1, s0);
-  }, []);
-}
 
 // Update these once — every contact/social link in the footer reads from them.
 const CONTACT_PHONE_HREF = "tel:+94112345678";
@@ -166,7 +148,6 @@ function scrollToTop() {
 export default function Footer() {
   const { t } = useLanguage();
   const f = t.footer;
-  useTawkTo();
 
   return (
     <footer className="hn-footer pt-16 pb-8">
