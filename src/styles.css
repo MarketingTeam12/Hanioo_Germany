@@ -1003,8 +1003,8 @@
 
 .hn-float-btn {
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1058,10 +1058,38 @@
 
 .hn-float-whatsapp {
   background: linear-gradient(135deg, #25d366, #128c4c);
+  color: #ffffff;
 }
 
 .hn-float-call {
-  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  background: linear-gradient(135deg, #34d399, #128c4c);
+}
+
+/* Small "24/7" badge tucked under the WhatsApp button, matching the
+   reference screenshot — pulses gently so it catches the eye. */
+.hn-float-badge {
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #128c4c;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 2px 8px;
+  box-shadow: 0 4px 10px -3px rgba(0, 0, 0, 0.35);
+  animation: hn-badge-blink 1.8s ease-in-out infinite;
+}
+
+@keyframes hn-badge-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
 }
 
 .hn-float-chat {
@@ -1504,6 +1532,7 @@
 }
 .hn-footer-logo {
   display: block;
+  border-radius: 12px;
 }
 .hn-footer-link {
   color: rgba(219, 234, 254, 0.75);
@@ -1548,6 +1577,7 @@
   flex-shrink: 0;
   box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.45);
 }
+
 .hn-footer-social {
   width: 46px;
   height: 46px;
@@ -1753,9 +1783,10 @@
   width: 260px;
   height: 540px;
   border-radius: 40px;
-  background: linear-gradient(180deg, #17204A 0%, #0B1230 100%);
-  border: 6px solid #2A3563;
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+  background: linear-gradient(180deg, #2A3568 0%, #171F44 100%);
+  border: 6px solid #4C5A9C;
+  box-shadow: 0 30px 70px -18px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.08),
+    0 0 46px rgba(88, 108, 196, 0.35);
   padding: 18px 14px;
   display: flex;
   flex-direction: column;

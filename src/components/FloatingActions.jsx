@@ -15,6 +15,15 @@ export default function FloatingActions() {
   return (
     <div className="hn-float-stack" aria-label={fa.groupLabel}>
       <a
+        className="hn-float-btn hn-float-call"
+        href={PHONE_TEL_HREF}
+        aria-label={fa.call}
+        title={fa.call}
+      >
+        <Phone size={24} />
+      </a>
+
+      <a
         className="hn-float-btn hn-float-whatsapp"
         href={`https://wa.me/${WHATSAPP_NUMBER}`}
         target="_blank"
@@ -22,16 +31,8 @@ export default function FloatingActions() {
         aria-label={fa.whatsapp}
         title={fa.whatsapp}
       >
-        <WhatsAppIcon size={22} />
-      </a>
-
-      <a
-        className="hn-float-btn hn-float-call"
-        href={PHONE_TEL_HREF}
-        aria-label={fa.call}
-        title={fa.call}
-      >
-        <Phone size={20} />
+        <WhatsAppIcon size={26} />
+        <span className="hn-float-badge">24/7</span>
       </a>
     </div>
   );

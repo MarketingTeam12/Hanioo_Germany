@@ -8,14 +8,18 @@ import {
   FileText,
   Globe2,
   Headphones,
+  Home,
+  Info,
   Instagram,
   Linkedin,
   Link2,
   Mail,
   Phone,
+  Settings2,
   ShieldCheck,
   Users,
   Video,
+  Workflow,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
@@ -133,8 +137,17 @@ const SOCIALS = [
   { icon: WhatsAppIcon, label: "WhatsApp", href: "https://wa.me/94112345678", bg: "#25D366" },
 ];
 
-// Quick Links column — paths line up with the routes in App.jsx.
+// Quick Links column — paths line up with the routes in App.jsx, each
+// paired with its own colored icon badge (same visual language as the
+// "Our Services" column below).
 const QUICK_LINK_PATHS = ["/", "/service", "/how-it-works", "/about", "/contact"];
+const QUICK_LINK_ICONS = [
+  { icon: Home, color: "#3B82F6" },
+  { icon: Settings2, color: "#8B5CF6" },
+  { icon: Workflow, color: "#F59E0B" },
+  { icon: Info, color: "#14B8A6" },
+  { icon: Phone, color: "#F43F5E" },
+];
 
 // Our Services column — mirrors the offerings on the Service page, each
 // paired with its icon + accent color from the project's SERVICE_ICONS set.
@@ -164,11 +177,11 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand + tagline + socials */}
           <div className="lg:col-span-2">
-            <Link to="/" className="hn-footer-logo-wrap flex items-center gap-2 mb-3">
+            <Link to="/" className="hn-footer-logo-wrap flex items-center gap-2 mb-5">
               <img
-                src="/hanioo-logo-lockup.png"
+                src="/hanioo-logo-lockup-footer.png"
                 alt="Hanioo logo"
-                className="hn-footer-logo h-16 sm:h-20 w-auto object-contain"
+                className="hn-footer-logo h-20 sm:h-28 w-auto object-contain"
               />
             </Link>
             <p className="text-sm max-w-xs mb-6" style={{ color: "rgba(255,249,238,0.75)" }}>
@@ -203,7 +216,7 @@ export default function Footer() {
                 <li key={label}>
                   <FooterNavLink
                     to={QUICK_LINK_PATHS[i]}
-                    icon={<ChevronRight size={13} className="hn-footer-link-arrow hn-footer-link-arrow-static" />}
+                    icon={<ServiceIcon icon={QUICK_LINK_ICONS[i].icon} color={QUICK_LINK_ICONS[i].color} />}
                   >
                     {label}
                   </FooterNavLink>
@@ -240,15 +253,15 @@ export default function Footer() {
             </div>
             <ul className="space-y-3 text-sm mb-5">
               <li className="flex items-center gap-2.5">
-                <Globe2 size={15} className="flex-shrink-0" style={{ color: "#38BDF8" }} />
+                <ServiceIcon icon={Globe2} color="linear-gradient(140deg, #38BDF8, #0284C7 130%)" />
                 <span style={{ color: "rgba(255,249,238,0.8)" }}>{f.availability}</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone size={15} className="flex-shrink-0" style={{ color: "#34D399" }} />
+                <ServiceIcon icon={Phone} color="linear-gradient(140deg, #34D399, #047857 130%)" />
                 <a href={CONTACT_PHONE_HREF} className="hn-footer-link">{f.contactPhone}</a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail size={15} className="flex-shrink-0" style={{ color: "#FBBF24" }} />
+                <ServiceIcon icon={Mail} color="linear-gradient(140deg, #FBBF24, #D97706 130%)" />
                 <a href={CONTACT_EMAIL_HREF} className="hn-footer-link">{f.contactEmail}</a>
               </li>
             </ul>
