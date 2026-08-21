@@ -4,8 +4,8 @@ import { useLanguage } from "../context/LanguageContext";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 // Update these two once — every button below reads from them.
-const WHATSAPP_NUMBER = "94112345678"; // digits only, country code first, no + or spaces
-const PHONE_NUMBER = "+94 11 234 5678";
+const WHATSAPP_NUMBER = "917299005577"; // digits only, country code first, no + or spaces
+const PHONE_NUMBER = "+91 7299005577";
 const PHONE_TEL_HREF = `tel:${PHONE_NUMBER.replace(/\s+/g, "")}`;
 
 export default function FloatingActions() {

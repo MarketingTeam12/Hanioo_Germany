@@ -105,18 +105,18 @@ function FooterNavLink({ to, href, children, icon }) {
 
 
 // Update these once — every contact/social link in the footer reads from them.
-const CONTACT_PHONE_HREF = "tel:+94112345678";
-const CONTACT_EMAIL_HREF = "mailto:hello@hanioo.de";
+const CONTACT_PHONE_HREF = "tel:+917299005577";
+const CONTACT_EMAIL_HREF = "mailto:info@hanioo.com";
 const SOCIALS = [
-  { icon: Facebook, label: "Facebook", href: "https://facebook.com/hanioo", bg: "#1877F2" },
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61592876055095", bg: "#1877F2" },
   {
     icon: Instagram,
     label: "Instagram",
-    href: "https://instagram.com/hanioo",
+    href: "https://www.instagram.com/hanioo_app/",
     bg: "linear-gradient(45deg, #F09433, #E6683C, #DC2743, #CC2366, #BC1888)",
   },
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/hanioo", bg: "#0A66C2" },
-  { icon: WhatsAppIcon, label: "WhatsApp", href: "https://wa.me/94112345678", bg: "#25D366" },
+  { icon: WhatsAppIcon, label: "WhatsApp", href: "https://wa.me/917299005577", bg: "#25D366" },
 ];
 
 // Quick Links column — paths line up with the routes in App.jsx, each
